@@ -44,6 +44,18 @@ python your_script_name.py
 - **extract_text_from_pdf:** Extracts text from a specified PDF file of class notes.
 - **chatbot:** Initiates the chatbot, accepting user queries and responding with relevant information.
 
+## Limitations
+
+While this project demonstrates a practical application of integrating class notes with OpenAI's API to enhance educational interactions, it does encounter certain limitations that users should be aware of:
+
+- **Token Limitation in OpenAI's Model**:When interacting with the OpenAI GPT-3.5-turbo model, users may encounter an `InvalidRequestError` if the combined length of the messages (including the class notes content and user queries) exceeds 16,385 tokens. The error message
+
+  ```bash
+  "This model's maximum context length is 16385 tokens. However, your messages resulted in 21074 tokens. Please reduce the length of the messages."
+  ```
+  
+   indicates that the content provided to the model in a single request is too long. To mitigate this, users are advised to either reduce the amount of text extracted from the PDF for each interaction or refine their queries to be more concise.
+
 ### Contributing
 Contributions, issues, and feature requests are welcome. Feel free to check issues page for more information.
 
